@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="Exceptions\" />
         <Folder Include="Features\" />
         <Folder Include="Profiles\" />
         <Folder Include="Responses\" />
@@ -15,6 +14,10 @@
 
     <ItemGroup>
       <ProjectReference Include="..\TaskManagementSystem.Domain\TaskManagementSystem.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
     </ItemGroup>
 
 </Project>
