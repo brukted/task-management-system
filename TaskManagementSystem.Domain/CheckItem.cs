@@ -8,5 +8,5 @@ public class CheckItem : BaseDomainEntity
     public string Description { get; set; } = null!;
     public int UserId { get; set; }
     public int TaskId { get; set; }
-    public string Status { get; set; } = null!;
+    public CheckItemStatus Status { get; set; }
 }

@@ -9,5 +9,5 @@ public class Task : BaseDomainEntity
     public int UserId { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
-    public string Status { get; set; } = null!;
+    public TaskStatus Status { get; set; }
 }

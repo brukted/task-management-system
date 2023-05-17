@@ -1,8 +1,9 @@
 using TaskManagementSystem.Application.DTOs.Common;
+using TaskManagementSystem.Domain;
 
 namespace TaskManagementSystem.Application.DTOs.CheckItem;
 
 public class ChangeCheckItemStatusDto : BaseDto
 {
-    public string Status { get; set; } = null!;
+    public CheckItemStatus Status { get; set; }
 }
