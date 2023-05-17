@@ -14,4 +14,8 @@
         <Folder Include="Responses\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\TaskManagementSystem.Domain\TaskManagementSystem.Domain.csproj" />
+    </ItemGroup>
+
 </Project>
