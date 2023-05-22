@@ -18,7 +18,7 @@ public class ITaskDtoValidator : AbstractValidator<ITaskDto>
             .GreaterThanOrEqualTo(p => p.StartDate)
             .WithMessage("EndDate must be greater than or equal to StartDate");
 
-        RuleFor(p => p.Status).NotNull().NotEmpty().WithMessage("Status is required.").IsInEnum().WithMessage(
-            "Status must be one of the following: 'InProgress', 'Done'");
+        RuleFor(p => p.Status).NotEmpty().WithMessage(
+            "Status must be one of the following: 0(InProgress), 1(Done)");
     }
 }

@@ -5,7 +5,7 @@ using TaskManagementSystem.Application.Features.CheckItem.Requests.Commands;
 
 namespace TaskManagementSystem.Application.Features.CheckItem.Handlers.Commands;
 
-public class DeleteCheckItemCommandHandler : IRequestHandler<DeleteCheckItemCommand>
+public class DeleteCheckItemCommandHandler : IRequestHandler<DeleteCheckItemCommand, Unit>
 {
     private readonly ICheckItemRepository _checkItemRepository;
 

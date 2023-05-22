@@ -1,11 +1,24 @@
+using TaskManagementSystem.Application;
+using TaskManagementSystem.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.ConfigurePersistenceServices(builder.Configuration);
+builder.Services.ConfigureApplicationServices();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors(o =>
+{
+    o.AddPolicy("CorsPolicy",
+        policyBuilder => policyBuilder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
 
 var app = builder.Build();
 

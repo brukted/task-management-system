@@ -9,10 +9,7 @@ public class ChangeCheckItemStatusDtoValidator : AbstractValidator<ChangeCheckIt
     public ChangeCheckItemStatusDtoValidator(ICheckItemRepository itemRepository)
     {
         Include(new CheckItemExistenceValidator(itemRepository));
-        RuleFor(dto => dto.Status)
-            .NotEmpty().NotNull().WithMessage("Status is required.")
-            .IsInEnum().WithMessage(
-                "Status must be one of the following: " +
-                $"{string.Join(", ", Enum.GetNames(typeof(CheckItemStatus)))}");
+        RuleFor(dto => dto.Status).NotEmpty().WithMessage(
+            "Status must be one of the following: 0(InProgress), 1(Done)");
     }
 }

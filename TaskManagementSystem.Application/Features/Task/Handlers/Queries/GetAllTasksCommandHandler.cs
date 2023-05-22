@@ -9,9 +9,9 @@ namespace TaskManagementSystem.Application.Features.Task.Handlers.Queries;
 public class GetAllTasksCommandHandler : IRequestHandler<GetAllTasksCommand, List<TaskDto>>
 {
     private readonly ITaskRepository _taskRepository;
-    private readonly Mapper _mapper;
+    private readonly IMapper _mapper;
 
-    public GetAllTasksCommandHandler(ITaskRepository taskRepository, Mapper mapper)
+    public GetAllTasksCommandHandler(ITaskRepository taskRepository, IMapper mapper)
     {
         _taskRepository = taskRepository;
         _mapper = mapper;

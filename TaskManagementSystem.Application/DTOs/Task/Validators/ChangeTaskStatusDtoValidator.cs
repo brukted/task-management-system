@@ -10,7 +10,7 @@ public class ChangeTaskStatusDtoValidator : AbstractValidator<ChangeTaskStatusDt
         RuleFor(p => p.Id).MustAsync(async (id, _) => await taskRepository.Exists(id))
             .WithMessage("Task with this id does not exist");
 
-        RuleFor(p => p.Status).IsInEnum()
-            .WithMessage("Status must be one of the following: 'InProgress', 'Done'");
+        RuleFor(p => p.Status).NotEmpty().WithMessage(
+            "Status must be one of the following: 0(InProgress), 1(Done)");
     }
 }

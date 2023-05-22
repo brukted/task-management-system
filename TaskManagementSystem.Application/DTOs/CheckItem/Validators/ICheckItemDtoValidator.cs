@@ -14,10 +14,7 @@ public class ICheckItemDtoValidator : AbstractValidator<ICheckItemDto>
         RuleFor(dto => dto.Description)
             .MaximumLength(500).WithMessage("Description must not exceed 500 characters.");
 
-        RuleFor(dto => dto.Status)
-            .NotEmpty().NotNull().WithMessage("Status is required.")
-            .IsInEnum().WithMessage(
-                "Status must be one of the following: " +
-                $"{string.Join(", ", Enum.GetNames(typeof(CheckItemStatus)))}");
+        RuleFor(dto => dto.Status).NotEmpty().WithMessage(
+            "Status must be one of the following: 0(InProgress), 1(Done)");
     }
 }

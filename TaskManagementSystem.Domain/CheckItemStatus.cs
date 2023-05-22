@@ -2,6 +2,6 @@ namespace TaskManagementSystem.Domain;
 
 public enum CheckItemStatus
 {
-    InProgress,
-    Done
+    InProgress = 0,
+    Done = 1
 }

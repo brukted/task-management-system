@@ -7,7 +7,7 @@ using TaskManagementSystem.Application.Features.CheckItem.Requests.Commands;
 
 namespace TaskManagementSystem.Application.Features.CheckItem.Handlers.Commands;
 
-public class UpdateCheckItemCommandHandler : IRequestHandler<UpdateCheckItemCommand>
+public class UpdateCheckItemCommandHandler : IRequestHandler<UpdateCheckItemCommand, Unit>
 {
     private readonly ICheckItemRepository _checkItemRepository;
     private readonly IMapper _mapper;
